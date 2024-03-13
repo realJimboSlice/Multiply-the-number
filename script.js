@@ -1,5 +1,13 @@
 function multiply(number) {
-  // Number is multiplied by 5 to the power length of the number (using toString method to convert number to string and then getting the length of the string using length property of string object)
-  let newNum = number * 5 ** number.toString().length;
+  let numLength;
+  // if the number is negative, we need to account for the negative sign
+  // so we subtract 1 from the length of the number
+  if (number < 0) {
+    numLength = number.toString().length - 1;
+  } else {
+    numLength = number.toString().length;
+  }
+  // multiply the number by 5 to the power of the length of the number
+  let newNum = number * 5 ** numLength;
   return newNum;
 }
